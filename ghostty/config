@@ -2,8 +2,10 @@
 theme = Dracula+
 
 # Font Config
-font-family = Hack Nerd Font Mono
+# font-family = Hack Nerd Font Mono
+font-family = JetBrainsMono Nerd Font
 font-thicken = true
+font-feature = -calt
 
 # Mac Font Size
 # font-size = 16
@@ -43,3 +45,4 @@ macos-window-shadow = false
 gtk-titlebar = false
 adw-toolbar-style = flat
 gtk-adwaita = false
+gtk-single-instance = true
