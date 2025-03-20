@@ -2,8 +2,24 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Activate virtual environment if it exists
+if [[ -f venv/bin/activate ]]; then
+  source venv/bin/activate
+elif [[ -f .venv/bin/activate ]]; then
+  source .venv/bin/activate
+fi
+
+
+# Activate virtual environment when changing directories
+function cd() {
+  builtin cd $1
+
+  if [[ -f venv/bin/activate ]]; then
+    source venv/bin/activate
+  elif [[ -f .venv/bin/activate ]]; then
+    source .venv/bin/activate
+  fi
+}
 
 # ZSH Path
 export ZSH="$HOME/.oh-my-zsh"
@@ -33,10 +49,11 @@ compinit
 zstyle ':completion:*' menu select
 
 # Aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ssh="ssh -l user server.com"
 
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+alias activ="source venv/bin/activate"
+alias rpy="python manage.py runserver"
+alias ll="eza -lag"
+alias lg="lazygit"
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+. "$HOME/.local/bin/env"
