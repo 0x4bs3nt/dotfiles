@@ -1,7 +1,6 @@
 # General
-auto-update-channel = tip
 shell-integration = zsh
-shell-integration-features = no-cursor,sudo,title,ssh-env,ssh-terminfo
+shell-integration-features = no-cursor,sudo,title,ssh-env
 
 # Dark Mode
 theme = Dracula+
@@ -18,10 +17,10 @@ font-family = TX-02
 font-feature = -calt
 
 # Mac Font Size
-font-size = 16
+# font-size = 16
 
 # Linux Font Size
-# font-size = 12
+font-size = 12
 
 adjust-cell-height = 20%
 
@@ -29,10 +28,6 @@ adjust-cell-height = 20%
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing = true
-
-# Background
-# background-opacity = 0.9
-# background-blur-radius = 15
 
 # Window
 window-new-tab-position = end
@@ -46,7 +41,6 @@ clipboard-write = allow
 confirm-close-surface = false
 
 # Shell
-shell-integration = zsh
 bold-is-bright = true
 
 # MacOS
@@ -56,4 +50,12 @@ macos-window-shadow = false
 gtk-titlebar = false
 adw-toolbar-style = flat
 gtk-single-instance = true
+
+# CSS
+gtk-custom-css = tab-style.css
+
+# Keybinds
 keybind = shift+enter=text:\n
+keybind = alt+t=new_tab
+keybind = alt+w=close_tab
+keybind = ctrl+comma=unbind
