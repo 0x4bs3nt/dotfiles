@@ -58,4 +58,4 @@ gtk-custom-css = tab-style.css
 keybind = shift+enter=text:\n
 keybind = alt+t=new_tab
 keybind = alt+w=close_tab
-keybind = ctrl+comma=unbind
+keybind = ctrl+,=unbind

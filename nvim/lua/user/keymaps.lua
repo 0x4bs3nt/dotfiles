@@ -10,3 +10,23 @@ vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower win
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<C-,>", "<cmd>ClaudeCode<CR>", { desc = "Claude Code" })
+
+-- Quickfix
+local function remove_quickfix_item()
+	local qf_list = vim.fn.getqflist()
+	local current_index = vim.fn.getqflist({ idx = 0 }).idx
+
+	if current_index > 0 and current_index <= #qf_list then
+		table.remove(qf_list, current_index)
+		vim.fn.setqflist(qf_list)
+		if current_index > #qf_list then
+			current_index = #qf_list
+		end
+		vim.fn.setqflist({}, "r", { idx = current_index })
+	end
+end
+
+vim.keymap.set("n", "<Space>n", "<cmd>cnext<CR>", { desc = "Next Quickfix Item" })
+vim.keymap.set("n", "<Space>p", "<cmd>cprev<CR>", { desc = "Previous Quickfix Item" })
+vim.keymap.set("n", "<Space>o", "<cmd>copen<CR>", { desc = "Open Quickfix List" })
+vim.keymap.set("n", "<Space>d", remove_quickfix_item, { desc = "Delete Current Quickfix Item" })
