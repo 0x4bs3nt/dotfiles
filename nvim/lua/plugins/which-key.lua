@@ -13,6 +13,7 @@ return {
             { '<leader>t', group = '[T]oggle' },
             { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
             { '<leader>ts', group = 'Toggle Auto Save' },
+            { '<leader>m', group = '[M]arkdown' },
         })
     end,
 }

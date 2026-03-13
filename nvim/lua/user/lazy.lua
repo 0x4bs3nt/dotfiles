@@ -94,4 +94,6 @@ require('lazy').setup({
     -- },
     -- Highlight todo, notes, etc in comments
     { import = 'plugins' },
+}, {
+    rocks = { enabled = false },
 })
