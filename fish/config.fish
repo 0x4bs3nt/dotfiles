@@ -32,6 +32,7 @@ if status is-interactive
     # Run on shell start for the initial directory
     __auto_venv
 end
+set -gx EDITOR nvim
 alias lg="lazygit"
 
 # bun

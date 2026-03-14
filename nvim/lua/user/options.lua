@@ -10,6 +10,10 @@ vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
+vim.opt.termguicolors = true
+vim.opt.pumblend = 10
+vim.opt.winblend = 10
+vim.opt.fillchars = { eob = ' ', vert = '│', horiz = '─', horizup = '┴', horizdown = '┬', vertleft = '┤', vertright = '├', verthoriz = '┼' }
 
 vim.opt.breakindent = true
 vim.opt.undofile = true
@@ -27,6 +31,10 @@ vim.opt.splitbelow = true
 -- vim.opt.listchars = { tab = '. ', trail = '.', nbsp = '␣' }
 vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 vim.opt.scrolloff = 15
 vim.opt.guicursor = ''
 vim.opt.guicursor = 'n-v-c:block-Cursor/lCursor-blinkon0'
