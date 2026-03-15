@@ -33,7 +33,6 @@ require("lazy").setup({
 					highlights.NormalFloat = { bg = palette.black1 }
 				end,
 			})
-			vim.cmd.colorscheme("nordic")
 		end,
 	},
 

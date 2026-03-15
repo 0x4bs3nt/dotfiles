@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Neovim
+nvim/plugin/
+nvim/pack/
+nvim/swap/
+nvim/undo/
+nvim/shada/
+
+# Fish shell machine-specific state
+fish/fish_variables
+
+# Claude Code local files
+.claude/
+
+# Editor backup/swap files
+*.swp
+*.swo
+*~
