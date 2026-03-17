@@ -58,8 +58,11 @@ fetch_usage() {
     -H "anthropic-beta: oauth-2025-04-20" \
     -H "Content-Type: application/json" >"$CACHE_FILE.tmp" 2>/dev/null
 
-  if [ -s "$CACHE_FILE.tmp" ] && jq -e . "$CACHE_FILE.tmp" &>/dev/null; then
+  if [ -s "$CACHE_FILE.tmp" ] && jq -e '.five_hour' "$CACHE_FILE.tmp" &>/dev/null; then
     mv "$CACHE_FILE.tmp" "$CACHE_FILE"
+    rm -f "$CACHE_FILE.err"
+  elif [ -s "$CACHE_FILE.tmp" ] && jq -e '.error.type == "rate_limit_error"' "$CACHE_FILE.tmp" &>/dev/null; then
+    mv "$CACHE_FILE.tmp" "$CACHE_FILE.err"
   else
     rm -f "$CACHE_FILE.tmp"
   fi
@@ -105,6 +108,8 @@ if [ -f "$CACHE_FILE" ]; then
 
     USAGE="${S}\x1b[${UC}m${FIVE_H}/100%%\x1b[0m${RESET}"
   fi
+elif [ -f "$CACHE_FILE.err" ]; then
+  USAGE="${S}\x1b[38;2;255;0;0mRate limited\x1b[0m"
 fi
 
 printf "${P}${G}${CTX}${USAGE}"

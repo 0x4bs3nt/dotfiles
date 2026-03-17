@@ -32,6 +32,7 @@ return {
             css = { 'prettierd' },
             html = { 'prettierd' },
             json = { 'prettierd' },
+            yaml = { 'prettierd' },
             prisma = { lsp_format = 'prefer' },
 
             shell = { 'shfmt' },

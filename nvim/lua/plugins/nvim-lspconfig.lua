@@ -104,6 +104,7 @@ return {
                 'ruff',
                 'ts_ls',
                 'jsonls',
+                'yamlls',
                 'rust_analyzer',
                 'prismals',
                 'eslint',
