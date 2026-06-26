@@ -34,6 +34,7 @@ if status is-interactive
 end
 set -gx EDITOR nvim
 alias lg="lazygit"
+abbr -a rpy 'python manage.py runserver'
 alias ll="eza --long --all --group --group-directories-first --icons=auto --header --colour-scale=size --time-style=relative"
 
 # bun
