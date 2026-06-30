@@ -1,7 +1,7 @@
 return {
     'neovim/nvim-lspconfig',
     dependencies = {
-        { 'williamboman/mason.nvim', config = true, opts = { ensure_installed = { 'black' } } },
+        { 'williamboman/mason.nvim', config = true },
         'williamboman/mason-lspconfig.nvim',
         opts = { autoinstall = true },
         'WhoIsSethDaniel/mason-tool-installer.nvim',
@@ -90,7 +90,7 @@ return {
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             'stylua',
-            'black',
+            'ruff',
             'prettierd',
             'eslint_d',
             'markdownlint',

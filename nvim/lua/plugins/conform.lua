@@ -22,8 +22,7 @@ return {
         formatters_by_ft = {
             lua = { 'stylua' },
 
-            -- python = { 'black' },
-            -- python = { 'ruff' },
+            python = { 'ruff_organize_imports', 'ruff_format' },
 
             javascript = { 'prettierd' },
             typescript = { 'prettierd' },
