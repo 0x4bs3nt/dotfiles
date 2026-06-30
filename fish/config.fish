@@ -4,6 +4,8 @@ if status is-interactive
 
     # Python 3.12 Paths
     fish_add_path /opt/homebrew/opt/python@3.12/bin
+    # Unversioned `python`/`pip` -> 3.12 (lives in libexec, not the versioned bin)
+    fish_add_path /opt/homebrew/opt/python@3.12/libexec/bin
 
     # PostgreSQL 16 Path
     fish_add_path /opt/homebrew/opt/postgresql@16/bin
