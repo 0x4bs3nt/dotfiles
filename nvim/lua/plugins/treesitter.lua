@@ -16,6 +16,7 @@ return {
                 'prisma',
                 'vim',
                 'vimdoc',
+                'regex',
                 'javascript',
                 'typescript',
                 'tsx',
