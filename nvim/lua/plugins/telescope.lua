@@ -32,6 +32,13 @@ return {
                 },
                 borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
             },
+            pickers = {
+                find_files = {
+                    no_ignore = true,
+                    hidden = true,
+                    file_ignore_patterns = { '%.git/' },
+                },
+            },
             extensions = {
                 ['ui-select'] = {
                     require('telescope.themes').get_dropdown(),
